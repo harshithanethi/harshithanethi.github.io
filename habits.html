@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FitTrackr — Habit Tracker</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="ft-flex ft-flex-column ft-min-vh-100">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">FitTrackr</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Navigate
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navDropdown">
+                <li><a class="dropdown-item" href="index.html">Home</a></li>
+                <li><a class="dropdown-item" href="calories.html">Calories</a></li>
+                <li>
+                  <a class="dropdown-item active" href="habits.html" aria-current="page">Habits</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="ft-flex-grow-1">
+      <div class="ft-container">
+        <h1 class="ft-h3 ft-mb-2">Habit tracker</h1>
+        <p class="ft-text-muted ft-small ft-mb-4">Progress and checkboxes sync to localStorage.</p>
+
+        <form id="habitForm" class="ft-flex ft-flex-wrap ft-flex-md-nowrap ft-gap-2 ft-align-items-end ft-mb-4" novalidate>
+          <div class="ft-flex-grow-1 ft-min-w-0" style="min-width: 10rem">
+            <label for="habitName" class="ft-visually-hidden">Habit name</label>
+            <input
+              type="text"
+              id="habitName"
+              class="form-control"
+              placeholder="Habit name"
+              autocomplete="off"
+            />
+          </div>
+          <div class="ft-flex-shrink-0">
+            <button type="submit" id="addHabitBtn" class="btn btn-accent">Add</button>
+          </div>
+        </form>
+
+        <p id="habitProgressLabel" class="ft-small ft-text-muted ft-mb-2">0 / 0</p>
+        <div class="progress ft-mb-3">
+          <div
+            id="habitProgress"
+            class="progress-bar"
+            role="progressbar"
+            aria-label="Habits completed"
+            style="width: 0%"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+
+        <ul id="habitList" class="list-group list-group-flush"></ul>
+      </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/habits.js"></script>
+  </body>
+</html>
